@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1.0.0
       - run: |+
-          echo $'\n >> recipe-manager-api-boot/src/main/resources/application.properties
+          echo $'\ntest' >> recipe-manager-api-boot/src/main/resources/application.properties
           cat recipe-manager-api-boot/src/main/resources/application.properties
 
   docker_hub_release:
