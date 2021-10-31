@@ -8,7 +8,7 @@ on:
 jobs:
   set_up_environment:
     env:
-      POSTGRESQL_PASSWORD_PROPERTY: ${{secrets.POSTGRESQL_PASSWORD_PROPERTY}}
+      POSTGRESQL_PASSWORD_PROPERTY: ${{ secrets.POSTGRESQL_PASSWORD_PROPERTY }}
     runs-on: ubuntu-latest
 
     steps:
@@ -46,5 +46,5 @@ jobs:
               login $HEROKU_EMAIL
               password $HEROKU_API_KEY
           EOF
-      - run: heroku git:remote -a $(basename ${{ github.repository}} )
-      - run: git push heroku HEAD:refs/heads/master
+#      - run: heroku git:remote -a $(basename ${{ github.repository}} )
+#      - run: git push heroku HEAD:refs/heads/master
