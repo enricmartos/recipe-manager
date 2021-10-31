@@ -6,15 +6,6 @@ on:
       - main
 
 jobs:
-  set_up_environment:
-    env:
-      POSTGRESQL_PASSWORD_PROPERTY: ${{ secrets.POSTGRESQL_PASSWORD_PROPERTY }}
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1.0.0
-      - run: |+
-          echo $'\n'$POSTGRESQL_PASSWORD_PROPERTY >> recipe-manager-api-boot/src/main/resources/application.properties
-          cat recipe-manager-api-boot/src/main/resources/application.properties
 
   docker_hub_release:
     env:
@@ -32,10 +23,14 @@ jobs:
     env:
       HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
+      POSTGRESQL_PASSWORD_PROPERTY: ${{ secrets.POSTGRESQL_PASSWORD_PROPERTY }}
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v1.0.0
+      - run: |+
+          echo $'\n'$POSTGRESQL_PASSWORD_PROPERTY >> recipe-manager-api-boot/src/main/resources/application.properties
+          cat recipe-manager-api-boot/src/main/resources/application.properties
       - run: |+
           cat >~/.netrc <<EOF
           machine api.heroku.com
