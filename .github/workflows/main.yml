@@ -15,8 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: docker login -u $DOCKER_HUB -p $DOCKER_HUB_KEY
-      - run: docker build . -t enricmartos/${{github.repository}}:latest
-      - run: docker push enricmartos/${{github.repository}}:latest
+      - run: docker build . -t ${{github.repository}}:latest
+      - run: docker push ${{github.repository}}:latest
 
 
   heroku_release:
