@@ -6,6 +6,16 @@ on:
       - main
 
 jobs:
+  set_up_environment:
+    env:
+        POSTGRESQL_PASSWORD: ${{secrets.POSTGRESQL_PASSWORD}}
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1.0.0
+      - run: |
+          echo $POSTGRESQL_PASSWORD_PROPERTY >> recipe-manager-api-boot/src/main/resources/application.properties
+          cat recipe-manager-api-boot/src/main/resources/application.properties
 
   docker_hub_release:
     env:
