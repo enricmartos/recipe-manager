@@ -6,7 +6,7 @@
     <parent>
         <artifactId>recipe-manager</artifactId>
         <groupId>org.emartos</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <packaging>jar</packaging>
@@ -19,8 +19,17 @@
         <dependency>
             <groupId>org.emartos</groupId>
             <artifactId>recipe-manager-core</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
