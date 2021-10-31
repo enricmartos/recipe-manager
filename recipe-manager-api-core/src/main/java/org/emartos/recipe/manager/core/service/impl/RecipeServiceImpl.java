@@ -33,4 +33,26 @@ public class RecipeServiceImpl implements RecipeService {
 		return recipeDto;
 	}
 
+	@Override
+	public RecipeDto createOrUpdate(RecipeDto recipeDto) {
+		LOGGER.debug(">> createOrUpdate() recipeDto {}", recipeDto);
+
+		Recipe recipeToPersist = recipeMapper.recipeDtoToRecipe(recipeDto);
+		Recipe recipePersisted =  recipeRepository.save(recipeToPersist);
+		RecipeDto recipeDtoPersisted = recipeMapper.recipeToRecipeDto(recipePersisted);
+
+		LOGGER.debug("<< createOrUpdate() recipeDtoPersisted {}", recipeDtoPersisted);
+		return recipeDtoPersisted;
+	}
+
+	@Override
+	public boolean deleteRecipeById(Long id) {
+		LOGGER.debug(">> deleteRecipeById() id {}", id);
+
+		boolean deleted = recipeRepository.deleteRecipeById(id) > 0;
+
+		LOGGER.debug("<< deleteRecipeById() deleted {}", deleted);
+		return deleted;
+	}
+
 }

@@ -6,4 +6,8 @@ public interface RecipeService {
 
 	RecipeDto getRecipeById(Long id);
 
+	RecipeDto createOrUpdate(RecipeDto recipeDto);
+
+	boolean deleteRecipeById(Long id);
+
 }

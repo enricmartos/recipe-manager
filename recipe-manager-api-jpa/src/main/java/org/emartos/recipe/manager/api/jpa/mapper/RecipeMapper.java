@@ -22,8 +22,15 @@ public class RecipeMapper {
 		return recipeDto;
 	}
 
+	public Recipe recipeDtoToRecipe(RecipeDto recipeDto) {
+		LOGGER.debug(">> recipeDtoToRecipe() recipeDto {}", recipeDto);
 
+		Recipe recipe = Recipe.builder()
+									   .name(recipeDto.getName())
+									   .build();
 
-
+		LOGGER.debug("<< recipeDtoToRecipe() recipe {}", recipe);
+		return recipe;
+	}
 
 }

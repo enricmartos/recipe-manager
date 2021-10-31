@@ -9,10 +9,8 @@ import org.emartos.recipe.manager.api.jpa.model.RecipeDto;
 import org.emartos.recipe.manager.core.service.RecipeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
@@ -36,6 +34,36 @@ public class RecipeController {
 
 		LOGGER.info("<< getRecipeById() recipeDto {}", recipeDto);
 		return recipeDto;
+	}
+
+	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	public RecipeDto createRecipe(@RequestBody RecipeDto recipeDto) {
+		LOGGER.info(">> createRecipe() recipeDto {}", recipeDto);
+
+		RecipeDto recipeDtoPersisted = recipeService.createOrUpdate(recipeDto);
+
+		LOGGER.info("<< createRecipe() recipeDtoPersisted {}", recipeDtoPersisted);
+		return recipeDtoPersisted;
+	}
+
+	@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	public RecipeDto updateRecipe(@RequestBody RecipeDto recipeDto) {
+		LOGGER.info(">> updateRecipe() recipeDto {}", recipeDto);
+
+		RecipeDto recipeDtoPersisted = recipeService.createOrUpdate(recipeDto);
+
+		LOGGER.info("<< updateRecipe() recipeDtoPersisted {}", recipeDtoPersisted);
+		return recipeDtoPersisted;
+	}
+
+	@DeleteMapping
+	public boolean deleteRecipeById(@RequestParam Long id) {
+		LOGGER.info(">> deleteRecipeById() id {}", id);
+
+		boolean deleted = recipeService.deleteRecipeById(id);
+
+		LOGGER.info("<< updateRecipe() deleteRecipeById {}", deleted);
+		return deleted;
 	}
 
 }
