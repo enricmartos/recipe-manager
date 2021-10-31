@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1.0.0
       - run: |+
-          echo $'\n'test >> recipe-manager-api-boot/src/main/resources/application.properties
+          echo $'\n'$POSTGRESQL_PASSWORD_PROPERTY >> recipe-manager-api-boot/src/main/resources/application.properties
           cat recipe-manager-api-boot/src/main/resources/application.properties
 
   docker_hub_release:
@@ -24,8 +24,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: docker login -u $DOCKER_HUB -p $DOCKER_HUB_KEY
-#      - run: docker build . -t ${{github.repository}}:latest
-#      - run: docker push ${{github.repository}}:latest
+      - run: docker build . -t ${{github.repository}}:latest
+      - run: docker push ${{github.repository}}:latest
 
 
   heroku_release:
@@ -45,5 +45,5 @@ jobs:
               login $HEROKU_EMAIL
               password $HEROKU_API_KEY
           EOF
-#      - run: heroku git:remote -a $(basename ${{ github.repository}} )
-#      - run: git push heroku HEAD:refs/heads/master
+      - run: heroku git:remote -a $(basename ${{ github.repository}} )
+      - run: git push heroku HEAD:refs/heads/master
