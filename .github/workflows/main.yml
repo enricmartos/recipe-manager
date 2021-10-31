@@ -8,7 +8,7 @@ on:
 jobs:
   set_up_environment:
     env:
-        POSTGRESQL_PASSWORD: ${{secrets.POSTGRESQL_PASSWORD}}
+      $POSTGRESQL_PASSWORD_PROPERTY: ${{secrets.$POSTGRESQL_PASSWORD_PROPERTY}}
     runs-on: ubuntu-latest
 
     steps:
