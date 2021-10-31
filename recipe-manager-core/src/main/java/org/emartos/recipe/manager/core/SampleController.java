@@ -20,6 +20,6 @@ public class SampleController {
 	public String hello() {
 		LOGGER.info(">> hello()");
 		LOGGER.info("<< hello()");
-		return "Hello World";
+		return "Hello World!";
 	}
 }
