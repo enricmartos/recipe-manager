@@ -24,6 +24,11 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
@@ -33,6 +38,7 @@
     <modules>
         <module>recipe-manager-api-boot</module>
         <module>recipe-manager-api-core</module>
+        <module>recipe-manager-api-jpa</module>
     </modules>
 
 </project>

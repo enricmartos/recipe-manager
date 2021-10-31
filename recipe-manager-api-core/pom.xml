@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <name>Recipe manager microservice Core</name>
+    <name>Recipe Manager API microservice Core</name>
     <artifactId>recipe-manager-api-core</artifactId>
     <parent>
         <artifactId>recipe-manager-api</artifactId>
@@ -14,5 +14,13 @@
     <properties>
         <main.basedir>${project.parent.basedir}</main.basedir>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.emartos</groupId>
+            <artifactId>recipe-manager-api-jpa</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>
