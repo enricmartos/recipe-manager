@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>org.emartos</groupId>
-    <artifactId>recipe-manager</artifactId>
+    <artifactId>recipe-manager-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
@@ -31,8 +31,8 @@
     </dependencies>
 
     <modules>
-        <module>recipe-manager-boot</module>
-        <module>recipe-manager-core</module>
+        <module>recipe-manager-api-boot</module>
+        <module>recipe-manager-api-core</module>
     </modules>
 
 </project>

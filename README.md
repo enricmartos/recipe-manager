@@ -1,1 +1,1 @@
-# recipe-manager
+# recipe-manager-api

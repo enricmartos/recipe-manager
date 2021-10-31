@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <name>Recipe manager microservice Core</name>
-    <artifactId>recipe-manager-core</artifactId>
+    <artifactId>recipe-manager-api-core</artifactId>
     <parent>
-        <artifactId>recipe-manager</artifactId>
+        <artifactId>recipe-manager-api</artifactId>
         <groupId>org.emartos</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>

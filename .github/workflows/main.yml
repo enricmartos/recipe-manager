@@ -15,8 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: docker login -u $DOCKER_HUB -p $DOCKER_HUB_KEY
-      - run: docker build . -t enricmartos/recipe-manager:latest
-      - run: docker push enricmartos/recipe-manager:latest
+      - run: docker build . -t enricmartos/${{ github.repository}}:latest
+      - run: docker push enricmartos/${{ github.repository}}:latest
 
 
   heroku_release:
@@ -36,5 +36,5 @@ jobs:
               login $HEROKU_EMAIL
               password $HEROKU_API_KEY
           EOF
-      - run: heroku git:remote -a $(basename recipe-manager-api )
+      - run: heroku git:remote -a $(basename ${{ github.repository}} )
       - run: git push heroku HEAD:refs/heads/master
