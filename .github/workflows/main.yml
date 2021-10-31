@@ -3,7 +3,7 @@ name: Application Test and Release Workflow
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
 
