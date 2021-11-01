@@ -14,7 +14,13 @@ public class RecipeMapper {
 	public RecipeDto recipeToRecipeDto(Recipe recipe) {
 		LOGGER.debug(">> recipeToRecipeDto() recipe {}", recipe);
 
+		if (recipe == null) {
+			LOGGER.debug("<< recipeToRecipeDto() recipe null");
+			return null;
+		}
+
 		RecipeDto recipeDto = RecipeDto.builder()
+									   .id(recipe.getId())
 									   .name(recipe.getName())
 									   .build();
 
@@ -25,7 +31,13 @@ public class RecipeMapper {
 	public Recipe recipeDtoToRecipe(RecipeDto recipeDto) {
 		LOGGER.debug(">> recipeDtoToRecipe() recipeDto {}", recipeDto);
 
+		if (recipeDto == null) {
+			LOGGER.debug("<< recipeDtoToRecipe() recipeDto null");
+			return null;
+		}
+
 		Recipe recipe = Recipe.builder()
+							  			.id(recipeDto.getId())
 									   .name(recipeDto.getName())
 									   .build();
 
