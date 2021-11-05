@@ -6,6 +6,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class RecipeMapper {
 
@@ -43,6 +46,22 @@ public class RecipeMapper {
 
 		LOGGER.debug("<< recipeDtoToRecipe() recipe {}", recipe);
 		return recipe;
+	}
+
+	public List<RecipeDto> recipeListToRecipeDtoList(List<Recipe> recipeList) {
+		LOGGER.trace(">> recipeListToRecipeDtoList() recipeList {}", recipeList);
+
+		if (recipeList == null || recipeList.isEmpty()) {
+			LOGGER.trace("<< recipeListToRecipeDtoList() list was null or empty -> recipeList {}", recipeList);
+			return new ArrayList<>();
+		}
+		List<RecipeDto> recipeDtoList = new ArrayList<>();
+		for (Recipe recipe : recipeList) {
+			recipeDtoList.add(recipeToRecipeDto(recipe));
+		}
+
+		LOGGER.trace("<< recipeListToRecipeDtoList() recipeDtoList {}", recipeDtoList);
+		return recipeDtoList;
 	}
 
 }

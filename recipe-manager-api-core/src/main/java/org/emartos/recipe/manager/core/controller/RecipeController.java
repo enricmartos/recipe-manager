@@ -12,6 +12,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
@@ -24,6 +26,16 @@ public class RecipeController {
 
 	public RecipeController(RecipeService recipeService) {
 		this.recipeService = recipeService;
+	}
+
+	@GetMapping(value = "/list", produces = APPLICATION_JSON_VALUE)
+	public List<RecipeDto> getRecipeList() {
+		LOGGER.info(">> getRecipeList()");
+
+		List<RecipeDto> recipeDtoList = recipeService.getRecipeList();
+
+		LOGGER.info("<< getRecipeList() recipeDtoList {}", recipeDtoList);
+		return recipeDtoList;
 	}
 
 	@GetMapping(produces = APPLICATION_JSON_VALUE)

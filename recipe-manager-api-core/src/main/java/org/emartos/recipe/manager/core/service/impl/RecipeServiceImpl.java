@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 @Transactional
@@ -23,6 +24,17 @@ public class RecipeServiceImpl implements RecipeService {
 	public RecipeServiceImpl(RecipeRepository recipeRepository, RecipeMapper recipeMapper) {
 		this.recipeRepository = recipeRepository;
 		this.recipeMapper = recipeMapper;
+	}
+
+	@Override
+	public List<RecipeDto> getRecipeList() {
+		LOGGER.debug(">> getRecipeList()");
+
+		List<Recipe> recipeList =  recipeRepository.findAll();
+		List<RecipeDto> recipeDtoList = recipeMapper.recipeListToRecipeDtoList(recipeList);
+
+		LOGGER.debug("<< getRecipeList() recipeDtoList {}", recipeDtoList);
+		return recipeDtoList;
 	}
 
 	@Override
