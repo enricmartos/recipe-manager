@@ -1,4 +1,4 @@
-package org.emartos.recipe.manager.core.service;
+package org.emartos.recipe.manager.api.core.service;
 
 import org.emartos.recipe.manager.api.jpa.model.RecipeDto;
 

@@ -1,10 +1,10 @@
-package org.emartos.recipe.manager.core.service.impl;
+package org.emartos.recipe.manager.api.core.service.impl;
 
+import org.emartos.recipe.manager.api.core.service.RecipeService;
 import org.emartos.recipe.manager.api.jpa.entity.Recipe;
 import org.emartos.recipe.manager.api.jpa.mapper.RecipeMapper;
 import org.emartos.recipe.manager.api.jpa.model.RecipeDto;
 import org.emartos.recipe.manager.api.jpa.repository.RecipeRepository;
-import org.emartos.recipe.manager.core.service.RecipeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

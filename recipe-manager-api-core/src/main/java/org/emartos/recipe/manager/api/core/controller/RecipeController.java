@@ -3,10 +3,10 @@
  *
  * Author: enricmartos
  */
-package org.emartos.recipe.manager.core.controller;
+package org.emartos.recipe.manager.api.core.controller;
 
 import org.emartos.recipe.manager.api.jpa.model.RecipeDto;
-import org.emartos.recipe.manager.core.service.RecipeService;
+import org.emartos.recipe.manager.api.core.service.RecipeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;

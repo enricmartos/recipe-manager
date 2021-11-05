@@ -3,7 +3,7 @@
  *
  * Author: enricmartos
  */
-package org.emartos.recipe.manager.core.controller;
+package org.emartos.recipe.manager.api.core.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

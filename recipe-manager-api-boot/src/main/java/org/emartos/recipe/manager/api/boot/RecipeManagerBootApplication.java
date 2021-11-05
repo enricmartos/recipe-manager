@@ -3,7 +3,7 @@
  *
  * Author: enricmartos
  */
-package org.emartos.recipe.manager.boot;
+package org.emartos.recipe.manager.api.boot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
