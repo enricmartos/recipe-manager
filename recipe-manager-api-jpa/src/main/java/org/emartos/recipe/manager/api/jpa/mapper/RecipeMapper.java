@@ -17,8 +17,8 @@ public class RecipeMapper {
 	public RecipeDto recipeToRecipeDto(Recipe recipe) {
 		LOGGER.debug(">> recipeToRecipeDto() recipe {}", recipe);
 
-		if (recipe == null) {
-			LOGGER.debug("<< recipeToRecipeDto() recipe null");
+		if (recipe == null || recipe.getId() == null) {
+			LOGGER.debug("<< recipeToRecipeDto() recipe or recipe id null");
 			return null;
 		}
 
