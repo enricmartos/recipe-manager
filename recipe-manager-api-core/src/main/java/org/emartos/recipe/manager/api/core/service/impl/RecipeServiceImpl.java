@@ -18,12 +18,12 @@ public class RecipeServiceImpl implements RecipeService {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(RecipeServiceImpl.class);
 
-	private final RecipeRepository recipeRepository;
 	private final RecipeMapper recipeMapper;
+	private final RecipeRepository recipeRepository;
 
-	public RecipeServiceImpl(RecipeRepository recipeRepository, RecipeMapper recipeMapper) {
-		this.recipeRepository = recipeRepository;
+	public RecipeServiceImpl(RecipeMapper recipeMapper, RecipeRepository recipeRepository) {
 		this.recipeMapper = recipeMapper;
+		this.recipeRepository = recipeRepository;
 	}
 
 	@Override
@@ -49,7 +49,7 @@ public class RecipeServiceImpl implements RecipeService {
 	}
 
 	@Override
-	public RecipeDto createOrUpdate(RecipeDto recipeDto) {
+	public RecipeDto createOrUpdateRecipe(RecipeDto recipeDto) {
 		LOGGER.debug(">> createOrUpdate() recipeDto {}", recipeDto);
 
 		Recipe recipeToPersist = recipeMapper.recipeDtoToRecipe(recipeDto);

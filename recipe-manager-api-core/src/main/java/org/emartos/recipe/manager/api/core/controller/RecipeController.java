@@ -52,7 +52,7 @@ public class RecipeController {
 	public RecipeDto createRecipe(@RequestBody RecipeDto recipeDto) {
 		LOGGER.info(">> createRecipe() recipeDto {}", recipeDto);
 
-		RecipeDto recipeDtoPersisted = recipeService.createOrUpdate(recipeDto);
+		RecipeDto recipeDtoPersisted = recipeService.createOrUpdateRecipe(recipeDto);
 
 		LOGGER.info("<< createRecipe() recipeDtoPersisted {}", recipeDtoPersisted);
 		return recipeDtoPersisted;
@@ -62,7 +62,7 @@ public class RecipeController {
 	public RecipeDto updateRecipe(@RequestBody RecipeDto recipeDto) {
 		LOGGER.info(">> updateRecipe() recipeDto {}", recipeDto);
 
-		RecipeDto recipeDtoPersisted = recipeService.createOrUpdate(recipeDto);
+		RecipeDto recipeDtoPersisted = recipeService.createOrUpdateRecipe(recipeDto);
 
 		LOGGER.info("<< updateRecipe() recipeDtoPersisted {}", recipeDtoPersisted);
 		return recipeDtoPersisted;

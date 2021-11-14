@@ -3,10 +3,10 @@
  *
  * Author: xavier.salvador@masvoz.es
  */
-package org.emartos.recipe.manager.api.jpa;
+package org.emartos.recipe.manager.api.jpa.repository;
 
+import org.emartos.recipe.manager.api.jpa.DataSourceConfig;
 import org.emartos.recipe.manager.api.jpa.entity.Recipe;
-import org.emartos.recipe.manager.api.jpa.repository.RecipeRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

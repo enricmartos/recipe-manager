@@ -8,10 +8,15 @@ public class RecipeManagerApiJpaTestsUtils {
 		// Default constructor
 	}
 
+	// region Recipe
+
 	public static Recipe getRecipe(Long id) {
 		return Recipe.builder()
 					 .id(id)
 					 .name("name")
 					 .build();
 	}
+
+	// endregion
+
 }
