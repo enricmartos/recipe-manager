@@ -2,11 +2,13 @@
  * Copyright (c) 2020 masvoz
  *
  * Author: xavier.salvador@masvoz.es
- */
+ *//*
+
 package org.emartos.recipe.manager.api.jpa.repository;
 
 import org.emartos.recipe.manager.api.jpa.DataSourceConfig;
 import org.emartos.recipe.manager.api.jpa.entity.Recipe;
+import org.emartos.recipe.manager.api.jpa.repository.jpa.JpaRecipeRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +36,7 @@ public class RecipeRepositoryTest {
 	private EntityManager entityManager;
 
 	@Autowired
-	private RecipeRepository recipeRepository;
+	private JpaRecipeRepository recipeRepository;
 
 	@Test
 	public void testSave() {
@@ -71,3 +73,4 @@ public class RecipeRepositoryTest {
 	}
 
 }
+*/

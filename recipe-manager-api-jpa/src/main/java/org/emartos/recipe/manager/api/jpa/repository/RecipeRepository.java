@@ -5,13 +5,17 @@
  */
 package org.emartos.recipe.manager.api.jpa.repository;
 
-import org.emartos.recipe.manager.api.jpa.entity.Recipe;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.emartos.recipe.manager.api.jpa.model.RecipeDto;
 
-@Repository
-public interface RecipeRepository extends JpaRepository<Recipe, Long> {
+import java.util.List;
 
-	int deleteRecipeById(Long id);
+public interface RecipeRepository {
 
+	List<RecipeDto> findAll();
+
+	RecipeDto findById(Long id);
+
+	RecipeDto save(RecipeDto recipeDto);
+
+	boolean deleteById(Long id);
 }
